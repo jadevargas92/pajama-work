@@ -1,4 +1,4 @@
-<% @jobs.each do |job| %>
+<% @job.each do |job| %>
 	<div>
 		<h1><%= job.title %></h1>
 		<i><%= job.company %></i>
@@ -23,17 +23,15 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <%= bootstrap_form_for Job.new do |f| %>
       <div class="modal-body">
       	<div class="container-fluid">
 		  <form>
-		  	<div class="form-group">
-		  	<label>Company Name</label>
-		  		<input type ="text" class="form-control">
-		  	</div>	
-		  	<div class="form-group">
-		  	<label>Job Title</label>
-		  		<input type ="text" class="form-control">
-		  	</div>
+		  			<%= f.text_field :company, label: 'Company name' %>
+					<%= f.text_field :title, label: 'Job Title' %>
+					<%= f.text_area :description, rows: '5', label: 'Write the details of the job posting here.' %> 
+					<%= f.submit 'Post', class: 'btn btn-primary' %>
+				<% end %>
 			  <div class="form-group">
 			    <label>Job Category</label>
 			    <select class="form-control">
@@ -44,10 +42,6 @@
 			      <option>Marketing</option>
 			      <option>Other</option>
 			    </select>
-			  </div>
-			  <div class="form-group">
-			    <label for="exampleTextarea ">Write the job details here.</label>
-			    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
 			  </div>
 			  <div class="form-group">
 			  	<label>Link to a Facebook account</label>
