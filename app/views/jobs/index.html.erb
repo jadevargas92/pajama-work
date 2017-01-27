@@ -1,0 +1,78 @@
+<% @jobs.each do |job| %>
+	<div>
+		<h1><%= job.title %></h1>
+		<i><%= job.company %></i>
+		<p><%= job.description %></p>
+	</div>
+
+	<hr />
+<% end %>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+  Post a job
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Enter the details of your job listing here!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<div class="container-fluid">
+		  <form>
+		  	<div class="form-group">
+		  	<label>Company Name</label>
+		  		<input type ="text" class="form-control">
+		  	</div>	
+		  	<div class="form-group">
+		  	<label>Job Title</label>
+		  		<input type ="text" class="form-control">
+		  	</div>
+			  <div class="form-group">
+			    <label>Job Category</label>
+			    <select class="form-control">
+			      <option>Programming</option>
+			      <option>Design</option>
+			      <option>Customer Support</option>
+			      <option>Sales/Account Management</option>
+			      <option>Marketing</option>
+			      <option>Other</option>
+			    </select>
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleTextarea ">Write the job details here.</label>
+			    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+			  </div>
+			  <div class="form-group">
+			  	<label>Link to a Facebook account</label>
+			  	<input type="text" class="form-control" placeholder="A URL is not necessary.">
+			  </div>
+
+			  <div class="form-group">
+			  	<label>Link to a Twitter account</label>
+			  	<input type="text" class="form-control" placeholder="A URL is not necessary.">
+			  </div>
+
+			  <div class="form-group">
+			    <label for="exampleInputFile">Upload your Logo</label>
+			    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+			    <small id="fileHelp" class="form-text text-muted">Upload a file of your logo. This will be placed on the job description page.</small>
+			  </div>
+
+			  <div class="form-group">
+			  	<label>Where can applicants apply?</label>
+			  	<input type="text" class="form-control" placeholder="www.pajamawork.com">
+			  </div>
+			  <button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>	
+      </div>
+    </div>
+  </div>
+</div>
