@@ -3,6 +3,19 @@
 		<h1><%= job.title %></h1>
 		<i><%= job.company %></i>
 		<p><%= job.description %></p>
+		<i><%= job.category %></i>
+			<% if job.facebook.present? %>
+				<p><%= link_to job.facebook, "http://#{job.facebook}" %></p>
+			<% else %>
+			<% end %>
+			<% if job.twitter.present? %>
+				<p><%= link_to job.twitter, "http://#{job.twitter}" %></a></p>
+			<% else %>
+			<% end %>
+			<% if job.application.present? %>
+				<p><%= link_to job.application, "http://#{job.application}" %></a></p>
+			<% else %>
+			<% end %>
 	</div>
 
 	<hr />
@@ -29,41 +42,18 @@
 		  <form>
 		  			<%= f.text_field :company, label: 'Company name' %>
 					<%= f.text_field :title, label: 'Job Title' %>
-					<%= f.text_area :description, rows: '5', label: 'Write the details of the job posting here.' %> 
+					<%= f.text_area :description, rows: '5', label: 'Write the details of the job posting here.' %>
+					<%= f.select :category, [['Programming'], ['Design'], ['Customer Support'], ['Sales/Account Management'], ['Marketing'], ['Other']], label: 'Job Category' %>
+					<%= f.text_area :facebook, label:'Facebook link to your Company', placeholder: 'A URL is not necessary' %>
+					<%= f.text_area :twitter, label:'Twitter link to your Company', placeholder: 'A URL is not necessary' %>
+					<%= f.text_area :application, label:'Where can applicants apply?', placeholder: 'www.pajamawork.com' %>
 					<%= f.submit 'Post', class: 'btn btn-primary' %>
 				<% end %>
-			  <div class="form-group">
-			    <label>Job Category</label>
-			    <select class="form-control">
-			      <option>Programming</option>
-			      <option>Design</option>
-			      <option>Customer Support</option>
-			      <option>Sales/Account Management</option>
-			      <option>Marketing</option>
-			      <option>Other</option>
-			    </select>
-			  </div>
-			  <div class="form-group">
-			  	<label>Link to a Facebook account</label>
-			  	<input type="text" class="form-control" placeholder="A URL is not necessary.">
-			  </div>
-
-			  <div class="form-group">
-			  	<label>Link to a Twitter account</label>
-			  	<input type="text" class="form-control" placeholder="A URL is not necessary.">
-			  </div>
-
 			  <div class="form-group">
 			    <label for="exampleInputFile">Upload your Logo</label>
 			    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
 			    <small id="fileHelp" class="form-text text-muted">Upload a file of your logo. This will be placed on the job description page.</small>
 			  </div>
-
-			  <div class="form-group">
-			  	<label>Where can applicants apply?</label>
-			  	<input type="text" class="form-control" placeholder="www.pajamawork.com">
-			  </div>
-			  <button type="submit" class="btn btn-primary">Submit</button>
 			</form>
 		</div>	
       </div>

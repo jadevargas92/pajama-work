@@ -1,6 +1,0 @@
-<%= bootstrap_form_for @job do |f| %>
-	<%= f.text_field :company, label: 'Company name' %>
-	<%= f.text_field :title, label: 'Job Title' %>
-	<%= f.text_area :description, rows: '5', label: 'Write the details of the job posting here.' %>
-	<%= f.submit 'Post', class: 'btn btn-primary' %>
-<% end %>
