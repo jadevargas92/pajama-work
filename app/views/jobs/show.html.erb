@@ -1,0 +1,19 @@
+<div class = "container">
+	<h1><%= @job.title %></h1>
+	<i><%= @job.company %></i>
+	<p><%= @job.description %></p>
+	<i><%= @job.category %></i>
+		<% if @job.facebook.present? %>
+			<p><%= link_to @job.facebook, "http://#{@job.facebook}" %></p>
+		<% else %>
+		<% end %>
+		<% if @job.twitter.present? %>
+			<p><%= link_to @job.twitter, "http://#{@job.twitter}" %></a></p>
+		<% else %>
+		<% end %>
+		<% if @job.application.present? %>
+			<p><%= link_to @job.application, "http://#{@job.application}" %></a></p>
+		<% else %>
+		<% end %>
+	<%= image_tag @job.logo %>
+</div>
