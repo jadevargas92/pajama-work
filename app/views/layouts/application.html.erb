@@ -18,14 +18,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Pajamawork</a>
+      <a class="navbar-brand" <%= link_to'Pajamawork', root_path %>></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
+        <li><%= link_to 'Programming Jobs', programming_jobs_path %></li>
+        <li><%= link_to 'Design Jobs', design_jobs_path %></li>
+        <li><%= link_to 'Customer Support Jobs', customer_support_jobs_path %></li>
+        <li><%= link_to 'Sales/Account Management Jobs', sales_account_management_jobs_path %></li>
+        <li><%= link_to 'Marketing Jobs', marketing_jobs_path %></li>
+        <li><%= link_to 'All Other Jobs', other_jobs_path %></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -46,7 +51,8 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Post a job2
+        </button>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -61,6 +67,41 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Enter the details of your job listing here!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= bootstrap_form_for Job.new do |f| %>
+      <div class="modal-body">
+        <div class="container-fluid">
+      <form>
+            <%= f.text_field :company, label: 'Company name' %>
+          <%= f.text_field :title, label: 'Job Title' %>
+          <%= f.text_area :description, rows: '5', label: 'Write the details of the job posting here.' %>
+          <%= f.select :category, [['Programming'], ['Design'], ['Customer Support'], ['Sales/Account Management'], ['Marketing'], ['Other']], label: 'Job Category' %>
+          <%= f.text_area :facebook, label:'Facebook link to your Company', placeholder: 'A URL is not necessary' %>
+          <%= f.text_area :twitter, label:'Twitter link to your Company', placeholder: 'A URL is not necessary' %>
+          <%= f.text_area :application, label:'Where can applicants apply?', placeholder: 'www.pajamawork.com' %>
+          <%= f.file_field :logo, label: 'Upload your logo' %>
+          <small id="fileHelp" class="form-text text-muted">Upload a file of your logo. This will be placed on the job description page.</small>
+          <hr />
+          <%= f.submit 'Post', class: 'btn btn-primary' %>
+        <% end %>
+        </div>
+      </form>
+
+
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
 
 <%= yield %>
 

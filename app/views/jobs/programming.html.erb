@@ -1,16 +1,5 @@
-
-<div class="main">
-	<br />
-	<div class = "text-box col-xs-10 col-xs-offset-1 text-center">
-		<h1>Welcome to Pajamawork!</h1>
-		<br/>
-		<h1>Here you can find the best remote jobs in town!</h1>
-		<br />
-		<h2>Or the best jobs anywhere really...</h2>
-	</div>
-</div>
-
 <% @job.each do |job| %>
+	<% if job.category == 'Programming' %>
 	<div class ="booyah-box col-xs-10 col-xs-offset-1 text-center">
 		<h1><%=link_to job.title, job_path(job) %></h1>
 		<i><%= job.company %></i>
@@ -30,5 +19,5 @@
 			<% end %>
 		<%= image_tag job.logo %>
 	</div>
-
+	<% end %>
 <% end %>
