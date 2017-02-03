@@ -6,6 +6,8 @@ gem 'bootstrap_form'
 
 gem 'carrierwave', '~> 1.0'
 
+gem 'mini_magick', '~> 4.3.1'
+
 gem 'sprockets', '2.11.0'
 
 gem 'rails_12factor', group: :production

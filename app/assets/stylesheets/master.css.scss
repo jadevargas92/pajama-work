@@ -118,31 +118,48 @@ body {
 }
 
 
-.title {
+div.title {
   font-size: 30px;
+   height: 90px;
+  line-height: 90px;
+  text-align: center;
 }
 
-.company{
+div.company{
   font-size:30px;
   font-weight: bold;
+  height: 90px;
+  line-height: 90px;
+  text-align: center;
 }
 
 
 
 .application{
-  text-align: right;
+  
+  text-align: center;
   float: right;
+
 }
 
-.application ul{
+/*.application ul{
   margin-top: 5px;
   margin-bottom: -10px;
-}
+}*/
 
 div.category{
-    margin-top: 0;
-    margin-right: auto;
-    margin-bottom: 0;
-    margin-left: auto;
+     height: 90px;
+  line-height: 90px;
+  text-align: center;
   font-size:15px;
+}
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+span {
+  text-decoration: none;
 }

@@ -60,7 +60,7 @@
           <%= f.text_area :twitter, label:'Twitter link to your Company', placeholder: 'A URL is not necessary' %>
           <%= f.text_area :application, label:'Where can applicants apply?', placeholder: 'www.pajamawork.com' %>
           <%= f.file_field :logo, label: 'Upload your logo' %>
-          <small id="fileHelp" class="form-text text-muted">Upload a file of your logo. This will be placed on the job description page.</small>
+          <small id="fileHelp" class="form-text text-muted">Upload a file of your logo. This will be placed on the job description page. ALL logos will be resized to 100px by 100px.</small>
           <hr />
           <%= f.submit 'Post', class: 'btn btn-primary' %>
         <% end %>
