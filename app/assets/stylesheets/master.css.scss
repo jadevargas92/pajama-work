@@ -22,7 +22,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height:1000px;
+  height:400px;
    box-shadow: 0px 3px 8px #2a2a2a;
 }
 
@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
   z-index: 15;
   top: 50%;
   left: 50%;
-  margin: -200px 0 0 -250px;;
+  margin: -350px 0 0 -250px;;
 }
 
 .text-box h1 {
@@ -62,8 +62,8 @@ h1, h2, h3, h4, h5, h6, .navbar {
   background: #fff;
   border: 1px solid #ccc;
   border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
-  margin-top:10px;
-  margin-bottom:10px;
+  margin-top:5px;
+  margin-bottom:5px;
   padding:20px;
 }
 
@@ -81,3 +81,68 @@ body {
 	background: url('redox_02.png')
 }
 
+
+
+.navbar .navbar-inner {
+    padding: 0;
+    margin-left: 10;
+}
+
+
+
+.navbar .nav li {
+    display: table-cell;
+    width: 11%;
+    float: none;
+}
+
+.navbar .nav li a {
+    font-weight: bold;
+    text-align: center;
+    border-left: 1px solid rgba(255, 255, 255, .75);
+    border-right: 1px solid rgba(0, 0, 0, .1);
+}
+
+.navbar .nav li:first-child a {
+    border-left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.navbar .nav li:last-child a {
+    border-right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.navbar-brand{
+  background-color: #000000;
+}
+
+
+.title {
+  font-size: 30px;
+}
+
+.company{
+  font-size:30px;
+  font-weight: bold;
+}
+
+
+
+.application{
+  text-align: right;
+  float: right;
+}
+
+.application ul{
+  margin-top: 5px;
+  margin-bottom: -10px;
+}
+
+div.category{
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+  font-size:15px;
+}

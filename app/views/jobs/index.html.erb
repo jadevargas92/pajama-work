@@ -11,24 +11,22 @@
 </div>
 
 <% @job.each do |job| %>
-	<div class ="booyah-box col-xs-10 col-xs-offset-1 text-center">
-		<h1><%=link_to job.title, job_path(job) %></h1>
-		<i><%= job.company %></i>
-		<p><%= job.description %></p>
-		<i><%= job.category %></i>
-			<% if job.facebook.present? %>
-				<p><%= link_to job.facebook, "http://#{job.facebook}" %></p>
-			<% else %>
-			<% end %>
-			<% if job.twitter.present? %>
-				<p><%= link_to job.twitter, "http://#{job.twitter}" %></a></p>
-			<% else %>
-			<% end %>
-			<% if job.application.present? %>
-				<p><%= link_to job.application, "http://#{job.application}" %></a></p>
-			<% else %>
-			<% end %>
-		<%= image_tag job.logo %>
-	</div>
-
+		<div class ="booyah-box col-xs-6 col-xs-offset-3">
+			<div class = "col-xs-4 company"><%= job.company %></div>
+			<div class = "col-xs-4 title"><%=link_to job.title, job_path(job) %></div>
+			<div class = "col-xs-2 category"><%= job.category %></div>
+			<div class = "col-xs-2 application"><% if job.application.present? %>
+						<button><%= link_to "Apply Here!", "http://#{job.application}", :target => "_blank" %></button>
+					<% else %>
+					<% end %>
+			<ul class= "list-unstyled">
+				<% if job.created_at > Time.now.beginning_of_day %>
+		    		<li class="text-right">Posted <%="#{time_ago_in_words(job.created_at)} ago"%> </li>
+				<% else %>
+		   	 		<li class="text-right">Posted <%= job.created_at.strftime("%b %d, %Y") %></li>
+				<% end %>
+			</ul>
+			</div>
+		</div>
 <% end %>
+

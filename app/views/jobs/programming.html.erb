@@ -18,6 +18,11 @@
 			<% else %>
 			<% end %>
 		<%= image_tag job.logo %>
+		<% if job.created_at > Time.now.beginning_of_day %>
+    		<%="#{time_ago_in_words(job.created_at)} ago"%> 
+		<% else %>
+   	 		<%= job.created_at.strftime("%b %d, %Y") %> 
+		<% end %>
 	</div>
 	<% end %>
 <% end %>
