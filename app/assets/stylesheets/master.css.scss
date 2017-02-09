@@ -16,6 +16,11 @@ body {
             padding-bottom: 20px;
         }
 
+body { padding-top: 40px; }
+@media screen and (max-width: 768px) {
+    body { padding-top: 0px; }
+}
+
 .main {
 	background: url('code.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -36,7 +41,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
   color:white;
   position: absolute;
   width: 500px;
-  height: 230px;
+  height: 200px;
   z-index: 15;
   top: 50%;
   left: 50%;
@@ -162,4 +167,39 @@ span {
 
 span {
   text-decoration: none;
+}
+
+.outline {
+  border:1px solid black;
+  margin-top: 100px;
+}
+
+.mainshow {
+  background: url('code.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:200px;
+   box-shadow: 0px 3px 8px #2a2a2a;
+}
+
+.text-box-show {
+  background:rgba(0,0,0, 0.8);
+  color:white;
+  position: absolute;
+  width: 500px;
+  height: 120px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -400px 0 0 -250px;;
+}
+
+.side-panel {
+
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  text-align: center;
 }

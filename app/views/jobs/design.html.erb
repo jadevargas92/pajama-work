@@ -1,28 +1,27 @@
 <% @job.each do |job| %>
 	<% if job.category == 'Design' %>
-	<div class ="booyah-box col-xs-10 col-xs-offset-1 text-center">
-		<h1><%=link_to job.title, job_path(job) %></h1>
-		<i><%= job.company %></i>
-		<p><%= job.description %></p>
-		<i><%= job.category %></i>
-			<% if job.facebook.present? %>
-				<p><%= link_to job.facebook, "http://#{job.facebook}" %></p>
-			<% else %>
-			<% end %>
-			<% if job.twitter.present? %>
-				<p><%= link_to job.twitter, "http://#{job.twitter}" %></a></p>
-			<% else %>
-			<% end %>
-			<% if job.application.present? %>
-				<p><%= link_to job.application, "http://#{job.application}" %></a></p>
-			<% else %>
-			<% end %>
-		<%= image_tag job.logo %>
-		<% if job.created_at > Time.now.beginning_of_day %>
-    		<%="#{time_ago_in_words(job.created_at)} ago"%> 
-		<% else %>
-   	 		<%= job.created_at.strftime("%b %d, %Y") %> 
-		<% end %>
-	</div>
+	<div class ="booyah-box col-xs-8 col-xs-offset-2">
+			<div class = "col-xs-2 logo"><span><%=image_tag job.logo %></span></div>
+			<div class = "col-xs-3 company"><span><%= job.company %></span></div>
+			<div class = "col-xs-4 title"><span><%=link_to job.title, job_path(job) %></span></div>
+			<div class = "col-xs-2 category"><span><%= job.category %></span></div>
+			<div class = "col-xs-1 application"><% if job.application.present? %>
+						<%= link_to "http://#{job.application}", :class => "button btn btn-primary" do %>
+				  		Apply Here!
+				  	<% end %>
+					<% else %>
+					<% end %>
+				<br />
+				<br />
+				
+				  <span class="button-right"></span>
+				
+				<% if job.created_at > Time.now.beginning_of_day %>
+		    		<span>Posted <%="#{time_ago_in_words(job.created_at)} ago"%></span>
+				<% else %>
+		   	 		<span>Posted <%= job.created_at.strftime("%b %d, %Y") %></span>
+				<% end %>
+			</div>
+		</div>
 	<% end %>
 <% end %>

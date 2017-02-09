@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 
@@ -48,17 +49,22 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+
       <%= bootstrap_form_for Job.new do |f| %>
+
       <div class="modal-body">
         <div class="container-fluid">
       <form>
             <%= f.text_field :company, label: 'Company name' %>
           <%= f.text_field :title, label: 'Job Title' %>
-          <%= f.text_area :description, rows: '5', label: 'Write the details of the job posting here.' %>
+            <label>Write the details of the job posting here. Use the text editor to format your listing.</label>
+       <br />
+          <%= f.trix_editor :description %>
+          </trix-editor>
           <%= f.select :category, [['Programming'], ['Design'], ['Customer Support'], ['Sales/Account Management'], ['Marketing'], ['Other']], label: 'Job Category' %>
-          <%= f.text_area :facebook, label:'Facebook link to your Company', placeholder: 'A URL is not necessary' %>
-          <%= f.text_area :twitter, label:'Twitter link to your Company', placeholder: 'A URL is not necessary' %>
-          <%= f.text_area :application, label:'Where can applicants apply?', placeholder: 'www.pajamawork.com' %>
+          <%= f.text_area :facebook, label:'Facebook link to your Company', placeholder: 'A URL is not necessary. DO NOT TYPE IN WWW or HTTPS://. For example, instead put "pajamawork.com"' %>
+          <%= f.text_area :twitter, label:'Twitter link to your Company', placeholder: 'A URL is not necessary. DO NOT TYPE IN WWW or HTTPS://. For example, instead put "pajamawork.com"' %>
+          <%= f.text_area :application, label:'Where can applicants apply?', placeholder: 'DO NOT TYPE IN WWW or HTTPS://. For example, instead put "pajamawork.com"' %>
           <%= f.file_field :logo, label: 'Upload your logo' %>
           <small id="fileHelp" class="form-text text-muted">Upload a file of your logo. This will be placed on the job description page. ALL logos will be resized to 100px by 100px.</small>
           <hr />

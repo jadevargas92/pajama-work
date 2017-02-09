@@ -4,6 +4,8 @@ gem 'bootstrap-sass', '~> 3.3.5.1'
 
 gem 'bootstrap_form'
 
+gem 'trix'
+
 gem 'carrierwave', '~> 1.0'
 
 gem 'mini_magick', '~> 4.3.1'
