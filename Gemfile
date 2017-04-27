@@ -12,6 +12,10 @@ gem 'mini_magick', '~> 4.3.1'
 
 gem 'sprockets', '2.11.0'
 
+gem 'figaro'
+
+gem 'fog'
+
 gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

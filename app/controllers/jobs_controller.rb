@@ -8,8 +8,8 @@ class JobsController < ApplicationController
 	end
 
 	def create
-		Job.create(job_params)
-		redirect_to root_path
+			Job.create(job_params)
+			redirect_to root_path
 	end
 
 	def show

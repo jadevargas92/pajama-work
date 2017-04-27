@@ -4,6 +4,8 @@
     	<div class ="booyah-box">
 			<h1><%= @job.title %></h1>
 			<br />
+			<h2 ><%= @job.company %></h2>
+			<br />
 			<h1><%= @job.description.html_safe %>
 			<h4><% if @job.created_at > Time.now.beginning_of_day %>
 		    <span>Posted <%="#{time_ago_in_words(@job.created_at)} ago"%></span>
@@ -15,7 +17,7 @@
 			</br>
 			<h2 ><%= @job.company %></h2>
 			<h5><% if @job.application.present? %>
-				<p><%= link_to @job.application, "http://#{@job.application}" %></a></p>
+				<p>Apply Here! --> <%= link_to @job.application, "http://#{@job.application}" %></a></p>
 				<% else %>
 				<% end %>
 			</h5>
