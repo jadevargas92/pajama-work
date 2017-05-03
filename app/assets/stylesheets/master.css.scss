@@ -21,6 +21,12 @@ body { padding-top: 40px; }
     body { padding-top: 0px; }
 }
 
+@media (max-width: 768px){
+  .navbar-nav li{
+     display:table;
+  }
+}
+
 .main {
 	background: url('code.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -88,35 +94,15 @@ body {
 
 
 
-.navbar .navbar-inner {
-    padding: 0;
-    margin-left: 10;
-}
 
 
 
-.navbar .nav li {
-    display: table-cell;
-    width: 11%;
-    float: none;
-}
 
-.navbar .nav li a {
-    font-weight: bold;
-    text-align: center;
-    border-left: 1px solid rgba(255, 255, 255, .75);
-    border-right: 1px solid rgba(0, 0, 0, .1);
-}
 
-.navbar .nav li:first-child a {
-    border-left: 0;
-    border-radius: 3px 0 0 3px;
-}
 
-.navbar .nav li:last-child a {
-    border-right: 0;
-    border-radius: 0 3px 3px 0;
-}
+
+
+
 
 .navbar-brand{
   background-color: #000000;
@@ -203,3 +189,19 @@ span {
   line-height: normal;
   text-align: center;
 }
+
+
+ .navbar-nav {
+    display:table;
+    width:100%;
+    margin: 0;
+    
+}
+.navbar-nav > li {
+    float:none;
+    display:table-cell;
+    text-align:center;
+    
+}
+
+
