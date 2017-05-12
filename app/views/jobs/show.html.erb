@@ -32,17 +32,28 @@
   
     	<div class = "booyah-box side-panel">
     	<% if @job.facebook.present? %>
-			<%= link_to "https://#{@job.facebook}" do %>
+    		<%  @job.facebook.include? "https://" %>
+    			<% @job.facebook.sub!("https://", "")%>
+
+
+			<%= link_to "http://#{@job.facebook}" do %>
 				<%= image_tag "facebook.png", :width => 75, :height => 75 %>
+				
 				<% end %>
 			<% end %>
 		<% if @job.twitter.present? %>
-			<%= link_to "https://#{@job.twitter}" do %>
+		<%  @job.twitter.include? "https://" %>
+    			<% @job.twitter.sub!("https://", "")%>
+			
+			<%= link_to "http://#{@job.twitter}" do %>
 				<%= image_tag "twitter.png", :width => 75, :height => 75 %>
 			<% end %>
 		<% else %>
 		<% end %>
 		<% if @job.application.present? %>
+		<%  @job.application.include? "https://" %>
+    			<% @job.application.sub!("https://", "")%>
+	
 			<p><%= link_to @job.application, "http://#{@job.application}" %></a></p>
 		<% else %>
 		<% end %>
